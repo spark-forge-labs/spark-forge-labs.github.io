@@ -45,3 +45,9 @@ footer{padding:32px 0 48px;border-top:1px solid var(--line);color:var(--muted);f
 .filters button{font:inherit;font-size:14px;font-weight:600;padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer}
 .filters button.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .card[hidden]{display:none}
+.livegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.live{display:flex;flex-direction:column;gap:4px;padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:16px;color:var(--ink);transition:transform .15s,border-color .15s}
+.live:hover{text-decoration:none;transform:translateY(-2px);border-color:var(--accent)}
+.live span{color:var(--muted);font-size:15px;line-height:1.5}.live em{margin-top:auto;padding-top:8px;font-style:normal;font-size:13px;color:var(--accent)}
+@media(max-width:800px){.livegrid{grid-template-columns:1fr}}
+@media(min-width:801px) and (max-width:1000px){.livegrid{grid-template-columns:repeat(2,1fr)}}
