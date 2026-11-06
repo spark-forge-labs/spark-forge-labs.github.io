@@ -10,7 +10,7 @@
 <body>
 <header class="nav"><div class="wrap">
   <a class="brand" href="#home">Narendra Darla</a>
-  <nav><ul><li><a href="#about">About</a></li><li><a href="#numbers">Numbers</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#live">Live</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+  <nav><ul><li><a href="#about">About</a></li><li><a href="#numbers">Numbers</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#live">Live</a></li><li><a href="#contact">Contact</a></li><li><a href="#activity">Activity</a></li></ul></nav>
 </div></header>
 
 <main id="home">
@@ -158,7 +158,30 @@
 </div></section>
 </main>
 
+<section id="activity"><div class="wrap">
+  <h2>Commit activity</h2><p class="sub" id="act-sub">Daily commits to the main project, last 26 weeks.</p>
+  <div class="astats" id="act-stats"></div>
+  <div class="heat" id="heat" role="img" aria-label="Commit heatmap for the last 26 weeks"></div>
+  <div class="legend"><span>Less</span><i class="l0"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i><span>More</span></div>
+  <h3 class="mh">Commits per month</h3><div class="months" id="months"></div>
+  <p class="note" id="act-note"></p>
+</div></section>
+
 <footer><div class="wrap">© <span id="y">2026</span> <strong>Narendra Darla</strong> · Built by hand, no frameworks.</div></footer>
-<script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.card').forEach(c=>c.hidden=b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f)});document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.card').forEach(c=>c.hidden=b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f)});fetch('activity.json').then(r=>r.json()).then(d=>{var D=d.days,iso=function(x){return x.toISOString().slice(0,10)};
+var today=new Date(d.generated+'T00:00:00Z'),start=new Date(today);start.setUTCDate(start.getUTCDate()-(26*7-1)-today.getUTCDay());
+var cells=[],max=0,last30=0,active=0,best=0,bestDay='';
+for(var x=new Date(start);x<=today;x.setUTCDate(x.getUTCDate()+1)){var k=iso(x),c=D[k]||0;cells.push([k,c]);if(c>max)max=c;}
+var cut=new Date(today);cut.setUTCDate(cut.getUTCDate()-29);
+Object.keys(D).forEach(function(k){active++;if(D[k]>best){best=D[k];bestDay=k}if(k>=iso(cut))last30+=D[k]});
+var lv=function(c){return !c?0:c<=Math.max(1,max*.15)?1:c<=max*.4?2:c<=max*.7?3:4};
+document.getElementById('heat').innerHTML=cells.map(function(a){return '<i class="l'+lv(a[1])+'" title="'+a[0]+': '+a[1]+' commit'+(a[1]==1?'':'s')+'"></i>'}).join('');
+var st=[[d.total.toLocaleString(),'commits in total'],[active,'active days'],[last30,'commits in the last 30 days'],[best,'most in one day ('+bestDay+')']];
+document.getElementById('act-stats').innerHTML=st.map(function(a){return '<div class="stat"><b>'+a[0]+'</b><span>'+a[1]+'</span></div>'}).join('');
+var M={};Object.keys(D).forEach(function(k){M[k.slice(0,7)]=(M[k.slice(0,7)]||0)+D[k]});var ks=Object.keys(M).sort(),mm=Math.max.apply(null,ks.map(function(k){return M[k]}));
+var nm=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+document.getElementById('months').innerHTML=ks.map(function(k){return '<div class="m"><span class="mv">'+M[k]+'</span><div class="bar" style="height:'+Math.max(4,M[k]/mm*120)+'px"></div><span class="ml">'+nm[+k.slice(5)-1]+" '"+k.slice(2,4)+'</span></div>'}).join('');
+document.getElementById('act-note').textContent='Source: git history of '+d.repo+' (snapshot '+d.generated+'). Counts only; no commit messages are published.';
+}).catch(function(){document.getElementById('act-sub').textContent='Commit activity is unavailable right now.'});document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
