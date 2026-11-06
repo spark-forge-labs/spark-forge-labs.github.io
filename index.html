@@ -66,42 +66,69 @@
 </div></section>
 
 <section id="projects"><div class="wrap">
-  <h2>Projects</h2><p class="sub">A selection of the strongest work from Spark Forge Labs.</p>
+  <h2>Projects</h2><p class="sub">Twelve projects from Spark Forge Labs, grouped by what they do.</p>
+  <div class="filters" role="group" aria-label="Filter projects"><button class="on" data-f="all">All</button><button data-f="products">Products</button><button data-f="agents">Agents</button><button data-f="mobile">Mobile</button><button data-f="tools">Tools &amp; demos</button></div>
   <div class="projects">
-
-    <article class="card"><span class="tag">Flagship product</span><h3>mnemoIQ</h3>
+    <article class="card" data-cat="products"><span class="tag">Flagship product</span><h3>mnemoIQ</h3>
       <p>A VPC-native AI operational intelligence platform. It binds the engineering toolchain into one live work graph and answers questions with citations in under two seconds.</p>
-      <ul><li>Hybrid semantic and lexical RAG with multi-model routing</li><li>Bounded agent loops with approval gates and an audit trail</li><li>Web, desktop, Chrome extension and mobile clients</li></ul>
-      <ul class="chips"><li>FastAPI</li><li>React</li><li>RAG</li><li>Stripe</li></ul>
-      <a class="more" href="https://mnemoiq.store" target="_blank" rel="noopener noreferrer">mnemoiq.store ↗</a></article>
+      <ul><li>Hybrid semantic and lexical RAG with multi-model routing</li><li>Bounded agent loops with approval gates and an audit trail</li><li>140+ integrations; Stripe billing; per-tenant isolation</li></ul>
+      <ul class="chips"><li>FastAPI</li><li>React</li><li>RAG</li><li>Stripe</li></ul><a class="more" href="https://mnemoiq.store" target="_blank" rel="noopener noreferrer">mnemoiq.store ↗</a></article>
 
-    <article class="card"><span class="tag">Autonomous delivery</span><h3>Dino: end-to-end change lifecycle</h3>
+    <article class="card" data-cat="agents"><span class="tag">Autonomous delivery</span><h3>Dino: end-to-end change lifecycle</h3>
       <p>Takes a change from intake to production and back through regression. Agents plan, build, review, test and merge, and production failures reopen the loop on their own.</p>
-      <ul><li>One branch per change, two reviewer agents per platform, merge gate</li><li>Every change carries hash-linked intent, spec and plan artifacts</li><li>Regression failures become tracked defects automatically</li></ul>
+      <ul><li>One branch per change, two reviewer agents per platform, merge gate</li><li>Hash-linked intent, spec and plan artifacts for every change</li><li>Regression failures become tracked defects automatically</li></ul>
       <ul class="chips"><li>Agents</li><li>Jira</li><li>ADLC</li><li>CI</li></ul></article>
 
-    <article class="card"><span class="tag">Desktop agent</span><h3>miniDino</h3>
+    <article class="card" data-cat="agents"><span class="tag">Desktop agent</span><h3>miniDino</h3>
       <p>A desktop agent that learns tasks from demonstrations and carries out natural-language goals on macOS, with a human approving risky steps.</p>
       <ul><li>Pure-Rust agent core with a localhost control API</li><li>Redacts passwords, cards and secrets before the planner sees a frame</li><li>Kill switch on Esc three times or a mouse jerk</li></ul>
       <ul class="chips"><li>Rust</li><li>Tauri v2</li><li>SQLite</li><li>macOS accessibility</li></ul></article>
 
-    <article class="card"><span class="tag">Mobile · self-healing</span><h3>Rexi: autonomous mobile delivery</h3>
+    <article class="card" data-cat="mobile"><span class="tag">Mobile · self-healing</span><h3>Rexi: autonomous mobile delivery</h3>
       <p>Business users write requirements in plain English; agents design the change, write the Android code and tests, and open a pull request. Crashes become defects that are analysed, approved and fixed.</p>
-      <ul><li>Android app with a FastAPI backend and Firebase integration</li><li>A watchdog agent keeps backend data valid and notifies the team</li><li>Settings readiness checks for repo, backend, model and Firebase</li></ul>
+      <ul><li>Android app with a FastAPI backend and Firebase integration</li><li>A watchdog agent keeps backend data valid and notifies the team</li><li>Readiness checks for repo, backend, model and Firebase</li></ul>
       <ul class="chips"><li>Android</li><li>Firebase</li><li>FastAPI</li></ul></article>
 
-    <article class="card"><span class="tag">Quality engineering</span><h3>Mobile Test Corner</h3>
-      <p>Runs Zephyr test cases on the newest Pixel emulator and shows every test travelling the app's flow. Failures become one defect each, and repeats are linked instead of re-filed.</p>
+    <article class="card" data-cat="mobile"><span class="tag">Product demo</span><h3>Rexi guided demo</h3>
+      <p>A self-contained, guided product demo of Rexi: a mission-control page where you pick a use case and press Play, with a timed welcome run.</p>
+      <ul><li>Plain static pages that deploy anywhere</li><li>Use-case picker with a full-run timer</li></ul>
+      <ul class="chips"><li>HTML</li><li>JavaScript</li><li>Vercel</li></ul></article>
+
+    <article class="card" data-cat="tools"><span class="tag">Quality engineering</span><h3>Mobile Test Corner</h3>
+      <p>Runs Zephyr test cases on the newest Pixel emulator and shows every test travelling the app&#x27;s flow. Failures become one defect each, and repeats are linked instead of re-filed.</p>
       <ul><li>Standard-library Python runner that provisions the emulator itself</li><li>Mock Android and iOS apps with planted bugs for end-to-end checks</li></ul>
       <ul class="chips"><li>Python</li><li>Android SDK</li><li>Zephyr</li></ul></article>
 
-    <article class="card"><span class="tag">Assistant</span><h3>Olivia: enterprise work assistant</h3>
+    <article class="card" data-cat="agents"><span class="tag">Assistant</span><h3>Olivia: enterprise work assistant</h3>
       <p>A voice and text assistant that turns an instruction into a reviewable plan (calendar events, Jira bugs, Slack posts) and acts only after the user confirms the exact details.</p>
       <ul><li>Typed, dictated or transcribed input</li><li>Adapters for Google Calendar, Jira and Slack with explicit scopes</li></ul>
       <ul class="chips"><li>Voice</li><li>OAuth</li><li>Jira</li><li>Slack</li></ul></article>
 
-  </div>
-</div></section>
+    <article class="card" data-cat="agents"><span class="tag">Multi-agent chat</span><h3>Agent Platform</h3>
+      <p>A self-hosted multi-agent platform that lets you query Slack, Gmail, Google Drive, OneDrive, Granola, Claude and OpenAI Codex from one chat interface.</p>
+      <ul><li>Docker Compose and nginx deployment</li><li>One chat surface over many connected tools</li></ul>
+      <ul class="chips"><li>Python</li><li>React</li><li>Docker</li><li>nginx</li></ul></article>
+
+    <article class="card" data-cat="agents"><span class="tag">Vision</span><h3>Autonomous Enterprise</h3>
+      <p>An interactive walkthrough of a fully autonomous enterprise: how intake, delivery, support and operations run as one agent-driven loop.</p>
+      <ul><li>Single-page interactive explainer</li><li>Light and dark themes</li></ul>
+      <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></article>
+
+    <article class="card" data-cat="tools"><span class="tag">Developer tools</span><h3>Dino SDKs, Chrome extension and Figma plugin</h3>
+      <p>The pieces of Dino that run outside the control plane: app SDKs for web, Android and iOS, a Figma plugin, a Chrome extension and an IDE integration.</p>
+      <ul><li>Chrome extension (Manifest V3): approve, reject or rerun automatic fixes from the toolbar</li><li>Web SDK served by the mnemoIQ API with type definitions</li></ul>
+      <ul class="chips"><li>TypeScript</li><li>Manifest V3</li><li>Figma API</li></ul></article>
+
+    <article class="card" data-cat="products"><span class="tag">Clients</span><h3>Native mnemoIQ apps</h3>
+      <p>Desktop, Mac, mobile and Chrome clients for mnemoIQ that share one licensing API and connect to production by default.</p>
+      <ul><li>Electron app for Mac and Windows</li><li>SwiftUI shell on WKWebView for macOS</li><li>Capacitor app for iOS and Android</li><li>&#x27;Ask mnemoIQ&#x27; Chrome extension with a side-panel chat</li></ul>
+      <ul class="chips"><li>Electron</li><li>SwiftUI</li><li>Capacitor</li><li>Chrome</li></ul></article>
+
+    <article class="card" data-cat="tools"><span class="tag">Delivery demo</span><h3>Autonomous SDLC super-demo</h3>
+      <p>A PIN-gated, narrated demo of the full autonomous software-delivery lifecycle, with presenter clips, an embedded working mobile demo and a Firebase use case.</p>
+      <ul><li>Chapters rebuilt around the real product</li><li>AES-GCM encrypted static page</li></ul>
+      <ul class="chips"><li>JavaScript</li><li>WebCrypto</li><li>Vercel</li></ul></article>
+  </div></section>
 
 <section id="contact" class="contact"><div class="wrap">
   <h2>Let's talk</h2>
@@ -111,6 +138,6 @@
 </main>
 
 <footer><div class="wrap">© <span id="y">2026</span> <strong>Narendra Darla</strong> · Built by hand, no frameworks.</div></footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.card').forEach(c=>c.hidden=b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f)});document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>

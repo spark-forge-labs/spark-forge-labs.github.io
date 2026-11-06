@@ -41,3 +41,7 @@ h2{font-size:30px;letter-spacing:-.03em;margin:0 0 6px}.sub{color:var(--muted);m
 footer{padding:32px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;text-align:center}
 @media(max-width:800px){.hero .wrap,.about{grid-template-columns:1fr}.avatar{width:140px;height:140px;font-size:48px;order:-1}.stats{grid-template-columns:repeat(2,1fr)}.skills,.projects{grid-template-columns:1fr}.nav ul{gap:14px}.hero{padding-top:56px}}
 @media(max-width:480px){.nav ul li:nth-child(n+4){display:none}}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.filters button{font:inherit;font-size:14px;font-weight:600;padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.card[hidden]{display:none}
