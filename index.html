@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Narendra Darla — Profile</title>
+<meta name="description" content="Narendra Darla builds AI products for engineering teams: enterprise intelligence, autonomous delivery, desktop agents and self-healing mobile apps.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#home">Narendra Darla</a>
+  <nav><ul><li><a href="#about">About</a></li><li><a href="#numbers">Numbers</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+</div></header>
+
+<main id="home">
+<div class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow">Product &amp; engineering</p>
+    <h1>Hi, I'm Narendra.</h1>
+    <p class="lede">I build AI products that give engineering teams one cited answer instead of ten open tabs, and agents that carry a change from a plain-English request to production.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="https://www.linkedin.com/in/narendradarla/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a class="btn" href="https://github.com/spark-forge-labs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+  </div>
+  <div class="avatar" role="img" aria-label="Narendra Darla initials">ND</div>
+</div></div>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2><p class="sub">What I work on and how I like to build.</p>
+  <div class="about">
+    <div>
+      <p>My focus is <strong>enterprise intelligence</strong>: tools that bind the systems engineering teams already use (GitHub, Jira, Slack, Datadog, PagerDuty and docs) into one live graph, so an on-call engineer gets a cited answer in seconds.</p>
+      <p>Lately that has grown into <strong>autonomous delivery</strong>. Agents that design a change, write the code and tests, open the pull request, and turn crashes into tracked defects that fix themselves, with a human approving every risky step.</p>
+      <p>I care about work that is verifiable: every change is traced from intent to spec to plan, tests run before hand-off, and demos run on the real product.</p>
+    </div>
+    <ul class="facts">
+      <li><span>Focus</span>AI products &amp; agents</li>
+      <li><span>Building at</span>Spark Forge Labs</li>
+      <li><span>Product</span><a href="https://mnemoiq.store" target="_blank" rel="noopener noreferrer">mnemoIQ</a></li>
+      <li><span>Stack</span>Python · React · Rust</li>
+      <li><span>Profiles</span><a href="https://www.linkedin.com/in/narendradarla/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="numbers"><div class="wrap">
+  <h2>By the numbers</h2><p class="sub">Scope of the flagship product.</p>
+  <div class="stats">
+    <div class="stat"><b>140+</b><span>tool integrations bound into one work graph</span></div>
+    <div class="stat"><b>&lt;2s</b><span>to a cited answer</span></div>
+    <div class="stat"><b>5</b><span>platforms: web, desktop, Chrome, iOS, Android</span></div>
+    <div class="stat"><b>~30 min</b><span>to deploy inside a customer's own VPC</span></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2><p class="sub">The tools I reach for.</p>
+  <div class="skills">
+    <div class="skill"><h3>AI &amp; agents</h3><ul class="chips"><li>Hybrid RAG</li><li>Multi-model routing</li><li>Agent orchestration</li><li>Human-in-the-loop approvals</li><li>Evals &amp; guardrails</li></ul></div>
+    <div class="skill"><h3>Engineering</h3><ul class="chips"><li>Python / FastAPI</li><li>React</li><li>Rust</li><li>Tauri</li><li>Kotlin / Android</li><li>Firebase</li></ul></div>
+    <div class="skill"><h3>Delivery</h3><ul class="chips"><li>Test-first development</li><li>CI &amp; release trains</li><li>Jira / Slack / Datadog</li><li>Helm / Terraform</li><li>Vercel</li></ul></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2><p class="sub">A selection of the strongest work from Spark Forge Labs.</p>
+  <div class="projects">
+
+    <article class="card"><span class="tag">Flagship product</span><h3>mnemoIQ</h3>
+      <p>A VPC-native AI operational intelligence platform. It binds the engineering toolchain into one live work graph and answers questions with citations in under two seconds.</p>
+      <ul><li>Hybrid semantic and lexical RAG with multi-model routing</li><li>Bounded agent loops with approval gates and an audit trail</li><li>Web, desktop, Chrome extension and mobile clients</li></ul>
+      <ul class="chips"><li>FastAPI</li><li>React</li><li>RAG</li><li>Stripe</li></ul>
+      <a class="more" href="https://mnemoiq.store" target="_blank" rel="noopener noreferrer">mnemoiq.store ↗</a></article>
+
+    <article class="card"><span class="tag">Autonomous delivery</span><h3>Dino: end-to-end change lifecycle</h3>
+      <p>Takes a change from intake to production and back through regression. Agents plan, build, review, test and merge, and production failures reopen the loop on their own.</p>
+      <ul><li>One branch per change, two reviewer agents per platform, merge gate</li><li>Every change carries hash-linked intent, spec and plan artifacts</li><li>Regression failures become tracked defects automatically</li></ul>
+      <ul class="chips"><li>Agents</li><li>Jira</li><li>ADLC</li><li>CI</li></ul></article>
+
+    <article class="card"><span class="tag">Desktop agent</span><h3>miniDino</h3>
+      <p>A desktop agent that learns tasks from demonstrations and carries out natural-language goals on macOS, with a human approving risky steps.</p>
+      <ul><li>Pure-Rust agent core with a localhost control API</li><li>Redacts passwords, cards and secrets before the planner sees a frame</li><li>Kill switch on Esc three times or a mouse jerk</li></ul>
+      <ul class="chips"><li>Rust</li><li>Tauri v2</li><li>SQLite</li><li>macOS accessibility</li></ul></article>
+
+    <article class="card"><span class="tag">Mobile · self-healing</span><h3>Rexi: autonomous mobile delivery</h3>
+      <p>Business users write requirements in plain English; agents design the change, write the Android code and tests, and open a pull request. Crashes become defects that are analysed, approved and fixed.</p>
+      <ul><li>Android app with a FastAPI backend and Firebase integration</li><li>A watchdog agent keeps backend data valid and notifies the team</li><li>Settings readiness checks for repo, backend, model and Firebase</li></ul>
+      <ul class="chips"><li>Android</li><li>Firebase</li><li>FastAPI</li></ul></article>
+
+    <article class="card"><span class="tag">Quality engineering</span><h3>Mobile Test Corner</h3>
+      <p>Runs Zephyr test cases on the newest Pixel emulator and shows every test travelling the app's flow. Failures become one defect each, and repeats are linked instead of re-filed.</p>
+      <ul><li>Standard-library Python runner that provisions the emulator itself</li><li>Mock Android and iOS apps with planted bugs for end-to-end checks</li></ul>
+      <ul class="chips"><li>Python</li><li>Android SDK</li><li>Zephyr</li></ul></article>
+
+    <article class="card"><span class="tag">Assistant</span><h3>Olivia: enterprise work assistant</h3>
+      <p>A voice and text assistant that turns an instruction into a reviewable plan (calendar events, Jira bugs, Slack posts) and acts only after the user confirms the exact details.</p>
+      <ul><li>Typed, dictated or transcribed input</li><li>Adapters for Google Calendar, Jira and Slack with explicit scopes</li></ul>
+      <ul class="chips"><li>Voice</li><li>OAuth</li><li>Jira</li><li>Slack</li></ul></article>
+
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let's talk</h2>
+  <p>Interested in AI for engineering teams, autonomous delivery, or what we're building at Spark Forge Labs? Reach out on LinkedIn.</p>
+  <div class="btns"><a class="btn primary" href="https://www.linkedin.com/in/narendradarla/" target="_blank" rel="noopener noreferrer">Message on LinkedIn ↗</a><a class="btn" href="https://github.com/spark-forge-labs" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> <strong>Narendra Darla</strong> · Built by hand, no frameworks.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
